@@ -4,8 +4,6 @@ metadata:
   name: zorua-job
 spec:
   concurrencyPolicy: Forbid
-  failedJobsHistoryLimit: 5
-  successfulJobsHistoryLimit: 3
   schedule: "{{ .Values.cronExpression }}"
   jobTemplate:
     spec:
