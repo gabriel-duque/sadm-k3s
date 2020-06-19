@@ -15,7 +15,7 @@ spec:
                 secretName: zorua-config
           containers:
           - name: zorua
-            image: zuh0/zorua
+            image: zuh0/zorua:latest
             imagePullPolicy: Always
             volumeMounts:
               - mountPath: /etc/zorua
