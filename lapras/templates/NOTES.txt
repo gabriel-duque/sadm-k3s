@@ -1,0 +1,7 @@
+You have just installed the {{ .Chart.Name }}-{{ .Chart.Version }} chart for transfer.sh in the namespace {{ .Release.Namespace }}.
+
+This is not an official chart.
+
+For more information about transfer.sh please see the official repository:
+
+https://github.com/dutchcoders/transfer.sh

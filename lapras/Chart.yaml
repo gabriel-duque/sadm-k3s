@@ -1,0 +1,11 @@
+apiVersion: v2
+name: lapras
+version: 1.0.0
+description: A file transfer service
+home: https://github.com/dutchcoders/transfer.sh
+sources:
+  - https://github.com/dutchcoders/transfer.sh
+maintainers:
+  - name: zuh0
+    email: gabriel@zuh0.com
+    url: https://github.com/zuh0

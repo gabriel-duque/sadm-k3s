@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lapras-deployment
+  labels:
+    app: lapras
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: lapras
+  template:
+    metadata:
+      labels:
+        app: lapras
+    spec:
+      containers:
+      - name: lapras
+        image: zuh0/transfer.sh:latest
+        args:
+        - "--provider"
+        - local
+        - "--basedir"
+        - {{ .Values.baseDir }}
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
