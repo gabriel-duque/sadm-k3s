@@ -21,12 +21,12 @@ spec:
         - "--provider"
         - local
         - "--basedir"
-        - {{ .Values.baseDir }}
+        - {{ required "A valid .Values.baseDir is required!" .Values.baseDir }}
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
         volumeMounts:
-          - mountPath: /tmp
+          - mountPath: {{ required "A valid .Values.baseDir is required!" .Values.baseDir }}
             name: lapras-data
       volumes:
       - name: lapras-data
