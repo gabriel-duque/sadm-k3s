@@ -1,3 +1,12 @@
 replicaCount: 1
 baseDir: "/lapras-data"
 domain: files.zuh0.com
+
+# This enables basic auth for POST requests to the file service
+auth:
+  enabled: true
+
+  # This should be the basic authentication secret
+  # You can obtain this by using the `htpasswd` command like this
+  #   $ htpasswd -nb <username> <password>
+  token:

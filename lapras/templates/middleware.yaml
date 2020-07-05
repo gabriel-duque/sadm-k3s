@@ -1,0 +1,9 @@
+{{- if .Values.auth.enabled -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: lapras-auth
+spec:
+  basicAuth:
+    secret: lapras-secret
+{{- end -}}
