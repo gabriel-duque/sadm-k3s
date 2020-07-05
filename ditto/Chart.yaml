@@ -1,0 +1,10 @@
+apiVersion: v2
+name: ditto
+description: an exposed Traefik ingress service
+type: application
+version: 0.0.1
+
+dependencies:
+  - name: traefik
+    version: "*"
+    repository: https://containous.github.io/traefik-helm-chart

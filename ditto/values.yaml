@@ -1,0 +1,41 @@
+# This exposes the Traefik dashboard
+dashboard:
+  enabled: true
+
+  # This is the domain you want to access the dashboard on
+  domain: "traefik.zuh0.com"
+
+  # This should be the basic authentication secret
+  # You can obtain this by using the `htpasswd` command like this
+  #   $ htpasswd -nb <username> <password>
+  auth:
+
+# These are the values for the traefik dependency
+# To see the default values:
+#   https://github.com/containous/traefik-helm-chart/blob/master/traefik/values.yaml
+traefik:
+
+  # Disable the default ingress route for the dashboard
+  ingressRoute:
+    dashboard:
+      enabled: false
+
+  # We will only use the CRDs
+  providers:
+    kubernetesIngress:
+      enabled: false
+
+  # Some additional arguments 
+  additionalArguments:
+
+    # Global redirection from HTTP to HTTPS (web -> websecure)
+    - "--entrypoints.web.http.redirections.entryPoint.to=:443"
+    - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+    - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
+
+    # Our TLS challenge for the "Let's encrypt" ACME API
+    - "--certificatesresolvers.tlschallenge.acme.tlschallenge"
+
+    # XXX: replace gabriel@zuh0.com by your email address here
+    - "--certificatesresolvers.tlschallenge.acme.email=gabriel@zuh0.com"
+    - "--certificatesresolvers.tlschallenge.acme.storage=/tmp/acme.json"

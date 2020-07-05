@@ -1,0 +1,19 @@
+{{- if .Values.dashboard.enabled -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`{{ required "A valid .Values.dashboard.domain must be specified!" .Values.dashboard.domain }}`)
+    kind: Rule
+    services:
+      - name: api@internal
+        kind: TraefikService
+    middlewares:
+      - name: traefik-dashboard-auth
+  tls:
+    certResolver: tlschallenge
+{{- end -}}

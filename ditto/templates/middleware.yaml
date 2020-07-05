@@ -1,0 +1,9 @@
+{{- if .Values.dashboard.enabled -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-dashboard-auth
+spec:
+  basicAuth:
+    secret: traefik-dashboard-secret
+{{- end -}}
