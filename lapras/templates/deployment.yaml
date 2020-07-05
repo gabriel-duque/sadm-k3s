@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: lapras
-        image: zuh0/transfer.sh:latest
+        image: dutchcoders/transfer.sh:edge
         args:
         - "--provider"
         - local
