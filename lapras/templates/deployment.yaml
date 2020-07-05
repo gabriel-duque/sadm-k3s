@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: lapras
-        image: dutchcoders/transfer.sh:edge
+        image: dutchcoders/transfer.sh:latest
         args:
         - "--provider"
         - local
@@ -25,3 +25,11 @@ spec:
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
+        volumeMounts:
+          - mountPath: /tmp
+            name: lapras-data
+      volumes:
+      - name: lapras-data
+        hostPath:
+          path: /k3svol0/lapras
+          type: DirectoryOrCreate

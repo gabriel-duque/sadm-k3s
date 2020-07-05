@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: lapras-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`{{ required "A valid .Values.dashboard.domain must be specified!" .Values.domain }}`)
+    kind: Rule
+    services:
+      - name: lapras-service
+        port: 8080
+  tls:
+    certResolver: tlschallenge

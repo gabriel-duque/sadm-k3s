@@ -1,2 +1,3 @@
 replicaCount: 1
 baseDir: "/tmp"
+domain: files.zuh0.com
