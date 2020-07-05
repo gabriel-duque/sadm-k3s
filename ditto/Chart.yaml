@@ -3,6 +3,10 @@ name: ditto
 description: an exposed Traefik ingress service
 type: application
 version: 0.0.1
+maintainers:
+  - name: zuh0
+    email: gabriel@zuh0.com
+    url: https://github.com/zuh0
 
 dependencies:
   - name: traefik
