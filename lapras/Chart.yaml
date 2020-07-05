@@ -1,6 +1,7 @@
 apiVersion: v2
 name: lapras
 version: 1.0.0
+type: application
 description: A file transfer service
 home: https://github.com/dutchcoders/transfer.sh
 sources:
