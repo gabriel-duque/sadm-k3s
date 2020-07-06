@@ -4,7 +4,7 @@ metadata:
   name: zorua-job
 spec:
   concurrencyPolicy: Forbid
-  schedule: {{ required .Values.cronExpression | quote }}
+  schedule: {{ required "A valid .Values.cronExpression is required!" .Values.cronExpression | quote }}
   jobTemplate:
     spec:
       template:
