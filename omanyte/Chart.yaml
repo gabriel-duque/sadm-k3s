@@ -1,0 +1,17 @@
+apiVersion: v2
+name: omanyte
+version: 1.0.0
+type: application
+description: A self-hosted Helm chart repository
+home: https://github.com/helm/chartmuseum
+sources:
+  - https://github.com/helm/chartmuseum
+maintainers:
+  - name: zuh0
+    email: gabriel@zuh0.com
+    url: https://github.com/zuh0
+
+dependencies:
+  - name: chartmuseum
+    version: "*"
+    repository: https://kubernetes-charts.storage.googleapis.com

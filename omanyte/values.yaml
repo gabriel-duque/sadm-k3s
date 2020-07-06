@@ -1,0 +1,15 @@
+omanyte:
+  domain: charts.zuh0.com
+
+  # This should be the basic authentication secret
+  #   # You can obtain this by using the `htpasswd` command like this
+  #     #   $ htpasswd -nb <username> <password>
+  auth:
+
+chartmuseum:
+  service:
+    servicename: "omanyte-service"
+  image:
+    repository: zuh0/chartmuseum
+    tag: latest
+    pullPolicy: Always

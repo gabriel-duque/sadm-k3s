@@ -1,0 +1,22 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: omanyte-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: PathPrefix(`/api/`) && Host(`{{ required "A valid .Values.omanyte.domain must be specified!" .Values.omanyte.domain }}`)
+    kind: Rule
+    services:
+      - name: omanyte-service
+        port: 8080
+    middlewares:
+      - name: omanyte-auth
+  - match: Host(`{{ required "A valid .Values.omanyte.domain must be specified!" .Values.omanyte.domain }}`)
+    kind: Rule
+    services:
+      - name: omanyte-service
+        port: 8080
+  tls:
+    certResolver: tlschallenge
