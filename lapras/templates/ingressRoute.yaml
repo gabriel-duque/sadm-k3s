@@ -6,14 +6,14 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Method(`PUT`) && Host(`{{ required "A valid .Values.dashboard.domain must be specified!" .Values.domain }}`)
+  - match: Method(`PUT`) && Host(`{{ required "A valid .Values.domain must be specified!" .Values.domain }}`)
     kind: Rule
     services:
       - name: lapras-service
         port: 8080
     middlewares:
       - name: lapras-auth
-  - match: Host(`{{ required "A valid .Values.dashboard.domain must be specified!" .Values.domain }}`)
+  - match: Host(`{{ required "A valid .Values.domain must be specified!" .Values.domain }}`)
     kind: Rule
     services:
       - name: lapras-service
