@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: alakazam-service
+spec:
+  selector:
+    app: alakazam
+  ports:
+  - name: alakazam-web
+    protocol: TCP
+    port: 8080

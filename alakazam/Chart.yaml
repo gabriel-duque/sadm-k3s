@@ -1,0 +1,12 @@
+apiVersion: v2
+name: alakazam
+version: 1.0.0
+type: application
+description: A self-hosted secure Pastebin service
+home: https://privatebin.info/
+sources:
+  - https://github.com/PrivateBin/PrivateBin
+maintainers:
+  - name: zuh0
+    email: gabriel@zuh0.com
+    url: https://github.com/zuh0

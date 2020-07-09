@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: alakazam-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`{{ required "A valid .Values.alakazam.domain must be specified!" .Values.alakazam.domain }}`)
+    kind: Rule
+    services:
+      - name: alakazam-service
+        port: 8080
+  tls:
+    certResolver: tlschallenge
