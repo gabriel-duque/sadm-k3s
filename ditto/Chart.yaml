@@ -2,7 +2,7 @@ apiVersion: v2
 name: ditto
 description: an exposed Traefik ingress service
 type: application
-version: 0.0.1
+version: 1.0.0
 maintainers:
   - name: zuh0
     email: gabriel@zuh0.com
