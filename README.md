@@ -1,7 +1,7 @@
 # sadm
 
 This repository holds the [Helm](https://helm.sh) charts I used to deploy my
-personal infrastructure.
+personal infrastructure on k3s.
 
 Although you can use any Kubernetes cluster, my services run on top of
 [k3s](https://k3s.io).
@@ -9,6 +9,9 @@ Although you can use any Kubernetes cluster, my services run on top of
 Here is a list of services you can find in the different folders of this
 repository:
 
+* alakazam: a [PrivateBin](https://privatebin.info/) paste service
+* arbok: an exposed [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+  for cluster management
 * ditto: a [Traefik](https://traefik.io/) load balancer chart with a dashboard exposed behind
   BasicAuth authentication
 * lapras: a file sharing service using
