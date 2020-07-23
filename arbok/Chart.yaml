@@ -1,0 +1,14 @@
+apiVersion: v2
+name: arbok
+description: a Kubernetes dashboard exposed with Traefik
+type: application
+version: 0.0.1
+maintainers:
+  - name: zuh0
+    email: gabriel@zuh0.com
+    url: https://github.com/zuh0
+
+dependencies:
+  - name: kubernetes-dashboard
+    version: "*"
+    repository: https://kubernetes.github.io/dashboard/

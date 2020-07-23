@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kubernetes-dashboard-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`{{ required "A valid .Values.dashboard.domain must be specified!" .Values.dashboard.domain }}`)
+    kind: Rule
+    services:
+      - name: arbok-kubernetes-dashboard
+        port: 8080
+    middlewares:
+      - name: kubernetes-dashboard-auth
+  tls:
+    certResolver: tlschallenge
