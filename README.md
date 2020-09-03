@@ -20,6 +20,7 @@ repository:
   uploads
 * omanyte: a [chartmuseum](https://github.com/helm/chartmuseum) Helm chart
   repository with BasicAuth authentication for API endpoints
+* pidgeot: my [personal website](https://zuh0.com/)
 * zorua: a [homemade](https://github.com/zuh0/zorua) dynamic DNS client for
   Google Domains used as a Kubernetes cron job to keep A records up to date
 
