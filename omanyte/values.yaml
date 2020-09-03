@@ -13,3 +13,6 @@ chartmuseum:
     repository: zuh0/chartmuseum
     tag: latest
     pullPolicy: Always
+  env:
+    open:
+      DISABLE_API: false
