@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pidgeot-service
+spec:
+  selector:
+    app: pidgeot
+  ports:
+  - name: pidgeot-web
+    protocol: TCP
+    port: 8000

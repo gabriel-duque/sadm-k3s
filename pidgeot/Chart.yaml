@@ -1,0 +1,12 @@
+apiVersion: v2
+name: pidgeot
+version: 1.0.0
+type: application
+description: My personal welcome page and resume service
+home: https://github.com/zuh0/zuh0.com
+sources:
+  - https://github.com/zuh0/zuh0.com
+maintainers:
+  - name: zuh0
+    email: gabriel@zuh0.com
+    url: https://github.com/zuh0

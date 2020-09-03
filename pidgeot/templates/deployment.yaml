@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pidgeot-deployment
+  labels:
+    app: pidgeot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pidgeot
+  template:
+    metadata:
+      labels:
+        app: pidgeot
+    spec:
+      containers:
+      - name: pidgeot
+        image: zuh0/zuh0.com:latest
+        ports:
+        - containerPort: 8000
+        imagePullPolicy: Always

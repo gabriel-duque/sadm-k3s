@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pidgeot-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`{{ required "A valid .Values.pidgeot.domain must be specified!" .Values.pidgeot.domain }}`)
+    kind: Rule
+    services:
+      - name: pidgeot-service
+        port: 8000
+  tls:
+    certResolver: tlschallenge
