@@ -18,5 +18,5 @@ spec:
       - name: pidgeot
         image: zuh0/zuh0.com:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 80
         imagePullPolicy: Always

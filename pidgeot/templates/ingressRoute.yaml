@@ -10,6 +10,6 @@ spec:
     kind: Rule
     services:
       - name: pidgeot-service
-        port: 8000
+        port: 80
   tls:
     certResolver: tlschallenge
