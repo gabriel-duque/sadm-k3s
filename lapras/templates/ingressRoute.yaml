@@ -14,11 +14,17 @@ spec:
         port: 8080
     middlewares:
       - name: lapras-auth
+      - name: security
   {{ end }}
   - match: Host(`{{ required "A valid .Values.domain must be specified!" .Values.domain }}`)
     kind: Rule
     services:
       - name: lapras-service
         port: 8080
+    middlewares:
+      - name: security
   tls:
     certResolver: tlschallenge
+    options:
+      name: mytlsoption
+      namespace: default

@@ -13,5 +13,9 @@ spec:
         port: 8080
     middlewares:
       - name: kubernetes-dashboard-auth
+      - name: security
   tls:
     certResolver: tlschallenge
+    options:
+      name: mytlsoption
+      namespace: default

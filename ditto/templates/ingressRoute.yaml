@@ -13,7 +13,11 @@ spec:
       - name: api@internal
         kind: TraefikService
     middlewares:
+      - name: security
       - name: traefik-dashboard-auth
   tls:
     certResolver: tlschallenge
+    options:
+      name: mytlsoption
+      namespace: default
 {{- end -}}

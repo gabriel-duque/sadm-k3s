@@ -11,5 +11,10 @@ spec:
     services:
       - name: pidgeot-service
         port: 80
+    middlewares:
+      - name: security
   tls:
     certResolver: tlschallenge
+    options:
+      name: mytlsoption
+      namespace: default

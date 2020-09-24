@@ -11,5 +11,10 @@ spec:
     services:
       - name: alakazam-service
         port: 8080
+    middlewares:
+      - name: security
   tls:
     certResolver: tlschallenge
+    options:
+      name: mytlsoption
+      namespace: default

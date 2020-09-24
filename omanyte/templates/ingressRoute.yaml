@@ -13,10 +13,16 @@ spec:
         port: 8080
     middlewares:
       - name: omanyte-auth
+      - name: security
   - match: Host(`{{ required "A valid .Values.omanyte.domain must be specified!" .Values.omanyte.domain }}`)
     kind: Rule
     services:
       - name: omanyte-service
         port: 8080
+    middlewares:
+      - name: security
   tls:
     certResolver: tlschallenge
+    options:
+      name: mytlsoption
+      namespace: default
