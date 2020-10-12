@@ -10,7 +10,7 @@ chartmuseum:
   service:
     servicename: "omanyte-service"
   image:
-    repository: zuh0/chartmuseum
+    repository: chartmuseum/chartmuseum
     tag: latest
     pullPolicy: Always
   env:
