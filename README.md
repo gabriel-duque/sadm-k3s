@@ -16,7 +16,7 @@ repository:
   BasicAuth authentication
 * lapras: a file sharing service using
   [transfer.sh](https://github.com/dutchcoders/transfer.sh) allowing
-  non-authenticated downloads but enforcing BasicAuth authentication for
+  non authenticated downloads but enforcing BasicAuth authentication for
   uploads
 * omanyte: a [chartmuseum](https://github.com/helm/chartmuseum) Helm chart
   repository with BasicAuth authentication for API endpoints
